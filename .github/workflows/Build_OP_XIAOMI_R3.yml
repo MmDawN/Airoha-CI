@@ -15,8 +15,8 @@ on:
   
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  CONFIG_FILE: 'config/XIAOMI_R3.config'
-  REPO_BRANCH: master
+  CONFIG_FILE: 'config/040.config'
+  REPO_BRANCH: openwrt-25.12
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
