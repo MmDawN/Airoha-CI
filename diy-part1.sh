@@ -33,4 +33,5 @@ git clone https://github.com/lkiuyu/DbusSmsForwardCPlus package/DbusSmsForwardCP
 # git clone --depth 1 https://github.com/vernesong/OpenClash.git OpenClash
 
 # istore
-echo 'src-git istore https://github.com/linkease/istore' >> feeds.conf.default
+echo >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
