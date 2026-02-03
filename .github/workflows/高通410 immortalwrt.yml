@@ -150,28 +150,21 @@ jobs:
 
     - name: 查看 openwrt 目录中的文件
       run: ls -la openwrt/
-      
+
+    
     - name: Load source config via make menuconfig and auto exit
       env:
-      TERM: xterm
+        TERM: xterm
       run: |
         cd openwrt
         expect -c '
-        set timeout 15
-        spawn script -q -c "make menuconfig" /dev/null
-        expect {
-        "configuration written" {
-          send "\033\033\n"
-          exp_continue
-        }
-        timeout {
-          puts "Timeout waiting for menu, force exit"
-          exec kill $spawn_id
-        }
-      }
-      expect eof
-    '
-      
+         set timeout 20
+         spawn script -q -c "make menuconfig" /dev/null
+         send "\033\033\n"
+         expect eof
+        '
+
+       
     - name: 自动上传编译配置
       uses: actions/upload-artifact@v4
       with:
