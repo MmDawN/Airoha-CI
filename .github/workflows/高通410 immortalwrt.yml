@@ -150,6 +150,10 @@ jobs:
 
     - name: 查看 openwrt 目录中的文件
       run: ls -la openwrt/
+      
+           ls -l .config
+      
+           ls -la openwrt/.config
 
  
     - name: 自动上传编译配置
@@ -157,8 +161,9 @@ jobs:
       with:
        name: build-config
        path: |
-        openwrt/.config
-        openwrt/feeds.conf.default
+         ${{ github.workspace }}/openwrt/.config
+         ${{ github.workspace }}/openwrt/feeds.conf.default
+       include-hidden-files: true
 
 
     - name: Compile the firmware
